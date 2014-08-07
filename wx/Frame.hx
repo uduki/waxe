@@ -26,10 +26,20 @@ class Frame extends TopLevelWindow
    {
       wx_frame_set_menu_bar(wxHandle,inBar.wxHandle);
    }
-   public function set_menuBar(inBar:wx.MenuBar) 
+   public function set_menuBar(inBar:wx.MenuBar)
    {
       wx_frame_set_menu_bar(wxHandle,inBar.wxHandle);
       return inBar;
+   }
+
+   public function createStatusBar(number:Int, inName:String, ?style:Int, ?inID:Int)
+   {
+      wx_frame_create_statusbar(wxHandle,number,style,inID,inName);
+   }
+
+   public function setStatusText(text:String, ?number:Int)
+   {
+       wx_frame_set_status_text(wxHandle,text,number);
    }
 
    public function handle(id:Int,handler:Dynamic->Void)
@@ -46,5 +56,7 @@ class Frame extends TopLevelWindow
 
    static var wx_frame_create:Array<Dynamic>->Dynamic = Loader.load("wx_frame_create",1);
    static var wx_frame_set_menu_bar = Loader.load("wx_frame_set_menu_bar",2);
+   static var wx_frame_create_statusbar = Loader.load("wx_frame_create_statusbar",5);
+   static var wx_frame_set_status_text = Loader.load("wx_frame_set_status_text",3);
 
 }
