@@ -52,6 +52,7 @@
    <file name="src/Scintilla.cpp"/>
    <file name="src/GLCanvas.cpp"/>
    <file name="src/Timer.cpp"/>
+   <file name="src/DataViewCtrl.cpp"/>
 
    <file name="src/Clay.cpp"/>
    <file name="src/clay/Container.cpp"/>
